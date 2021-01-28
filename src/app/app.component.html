@@ -99,3 +99,13 @@
   <p [ngClass]="myClass"></p>
   <p [ngStyle]="{'width': withExample}"></p>
   </div>
+
+<div>
+  <div *ngFor="let book of books" [ngClass]="'myBook'" [ngStyle]="{width: '200px'}">
+    <img [src]="book.image" [width]="80">
+    <h4> {{ book.name }} </h4>
+    <p> {{ book.publisher }} <br>
+        {{ book.publishedDate }}
+    </p>
+  </div>
+</div>
