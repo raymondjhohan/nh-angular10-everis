@@ -108,4 +108,6 @@
         {{ book.publishedDate }}
     </p>
   </div>
+
+  <app-book-example *ngFor="let book of books" [book]="book" [ngClass]="'myBook'"></app-book-example>
 </div>
