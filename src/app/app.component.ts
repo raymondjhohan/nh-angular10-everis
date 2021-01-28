@@ -13,6 +13,8 @@ export class AppComponent {
   buttonTitle = 'Ocultar imagen';
   displayNone: string;
   directives = ['ngIf', 'ngFor', 'ngSwitch', 'ng-template']
+  myClass = 'addMyclass';
+  withExample = '20px';
 
   changeTitle(): void {
     console.log(`Evento click parta cambiar titulo`);
