@@ -12,6 +12,8 @@ import { BookSelectCountComponent } from './components/book-select-count/book-se
 
 import { CustomNamePipe } from './components/book-example/book-name.pipe';
 import { PublisherPrettyPipe } from './components/book-example/publisher-pretty.pipe';
+import { ExamplePageComponent } from './pages/example-page/example-page.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { PublisherPrettyPipe } from './components/book-example/publisher-pretty.
     BookListExampleComponent,
     BookSelectCountComponent,
     CustomNamePipe,
-    PublisherPrettyPipe
+    PublisherPrettyPipe,
+    ExamplePageComponent,
   ],
   imports: [
     BrowserModule,
