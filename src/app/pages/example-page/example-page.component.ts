@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-example-page',
   templateUrl: './example-page.component.html',
   styleUrls: ['./example-page.component.scss']
 })
-export class ExamplePageComponent implements OnInit {
+export class ExamplePageComponent implements OnChanges, OnInit, OnDestroy {
 
-  constructor() { }
+  constructor() {
+    console.log(`life cycle Angular: contructor`);
+  }
   title = 'example';
   imageUrl = 'https://via.placeholder.com/150';
   isUnchanged = true;
@@ -48,6 +50,15 @@ export class ExamplePageComponent implements OnInit {
   ];
 
   ngOnInit(): void {
+    console.log(`life cycle Angular: ngOnInit`);
+  }
+
+  ngOnChanges(): void {
+    console.log(`life cycle Angular: ngOnChanges`);
+  }
+
+  ngOnDestroy(): void {
+    console.log(`life cycle Angular: ngOnDestroy`);
   }
 
   changeTitle(): void {

@@ -13,6 +13,7 @@ import { BookSelectCountComponent } from './components/book-select-count/book-se
 import { CustomNamePipe } from './components/book-example/book-name.pipe';
 import { PublisherPrettyPipe } from './components/book-example/publisher-pretty.pipe';
 import { ExamplePageComponent } from './pages/example-page/example-page.component';
+import { BookTopExampleDirective } from './components/book-example/book-top-example.directive';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ExamplePageComponent } from './pages/example-page/example-page.componen
     CustomNamePipe,
     PublisherPrettyPipe,
     ExamplePageComponent,
+    BookTopExampleDirective,
   ],
   imports: [
     BrowserModule,
