@@ -17,6 +17,7 @@ import { BookTopExampleDirective } from './components/book-example/book-top-exam
 import { SuscriptionFormComponent } from './components/suscription-form/suscription-form.component';
 import { TemplateFormPageComponent } from './pages/template-form-page/template-form-page.component';
 import { SuscriptionInlineFormComponent } from './components/suscription-inline-form/suscription-inline-form.component';
+import { ReserveBookFormComponent } from './components/reserve-book-form/reserve-book-form.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { SuscriptionInlineFormComponent } from './components/suscription-inline-
     SuscriptionFormComponent,
     TemplateFormPageComponent,
     SuscriptionInlineFormComponent,
+    ReserveBookFormComponent,
   ],
   imports: [
     BrowserModule,

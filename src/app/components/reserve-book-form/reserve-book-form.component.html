@@ -1,0 +1,38 @@
+<h3>Reactive form con FormGroup</h3>
+<form [formGroup]="reserveForm">
+  <p>
+    <label>Nombres</label>
+    <input type="text" formControlName="firstName">
+  </p>
+
+  <p>
+    <label>Apellidos</label>
+    <input type="text" formControlName="lastName">
+  </p>
+
+  <p>
+    <label>email</label>
+    <input type="email" formControlName="email">
+  </p>
+
+  <p>
+    <label>confirmar email</label>
+    <input type="email" formControlName="reemail">
+  </p>
+
+  <p>
+    <label>Codigo de libro</label>
+    <input type="text" formControlName="isbn">
+  </p>
+  <button>Reservar</button>
+</form>
+
+<pre>
+ firstName valido: {{ reserveForm.get('firstName').valid }}
+ firstName valido v2 {{ firstName.valid }}
+ firstName valido v3 {{ f.firstName.valid }}
+</pre>
+<pre>
+  {{ reserveForm.hasError('notMatch') }}
+  {{ f.isbn.hasError('notExists') }}
+</pre>
