@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Suscription } from './suscription.model';
 
 @Component({
   selector: 'app-suscription-form',
@@ -7,13 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuscriptionFormComponent implements OnInit {
 
+  model: Suscription;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.setForm();
   }
 
-  onSubmit(suscriptionForm) {
-    console.log(suscriptionForm.value);
+  setForm(): void  {
+    this.model = new Suscription(
+      'jose ramirez',
+      'jcramireztello@gmail.com',
+      {
+        city: 'Lima',
+        zipcode: 'Lima 25',
+        street: 'Jesus maria'
+      }
+    )
+  }
+
+  onSubmit(suscriptionForm: NgForm) {
+    if (suscriptionForm.valid) {
+      console.log(suscriptionForm.value);
+      console.log(this.model);
+    }
   }
 
 }
