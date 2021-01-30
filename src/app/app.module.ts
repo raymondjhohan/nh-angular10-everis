@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,7 @@ import { ExamplePageComponent } from './pages/example-page/example-page.componen
 import { BookTopExampleDirective } from './components/book-example/book-top-example.directive';
 import { SuscriptionFormComponent } from './components/suscription-form/suscription-form.component';
 import { TemplateFormPageComponent } from './pages/template-form-page/template-form-page.component';
+import { SuscriptionInlineFormComponent } from './components/suscription-inline-form/suscription-inline-form.component';
 
 
 @NgModule({
@@ -32,11 +33,13 @@ import { TemplateFormPageComponent } from './pages/template-form-page/template-f
     BookTopExampleDirective,
     SuscriptionFormComponent,
     TemplateFormPageComponent,
+    SuscriptionInlineFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

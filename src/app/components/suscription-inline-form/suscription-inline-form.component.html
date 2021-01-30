@@ -1,0 +1,23 @@
+<h3>Suscription reactive form</h3>
+<input type="email" placeholder="Ingrese email" [formControl]="email">
+<span *ngIf="email.invalid && (email.touched || email.dirty)">
+  <ng-container *ngIf="email.hasError('required')">
+    El campo es obligatorio
+  </ng-container>
+  <ng-container *ngIf="email.hasError('email')">
+    No es un email valido
+  </ng-container>
+  <ng-container *ngIf="email.hasError('pattern')">
+    Solo se aceptan email institucionales
+  </ng-container>
+</span><br />
+<button (click)="suscribeUser();">Suscribirse</button>
+<pre>
+  es valido: {{ email.valid }}
+  es invalido: {{ email.invalid }}
+  es touched: {{ email.touched }}
+  es dirty: {{ email.dirty }}
+</pre>
+<pre>
+  {{ email.errors | json }}
+</pre>
