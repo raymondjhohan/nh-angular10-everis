@@ -1,0 +1,32 @@
+<h3>reactive form con FormBuilder</h3>
+<form [formGroup]="registerForm">
+  <p>
+    <label>Nombres</label>
+    <input type="text" formControlName="firstName">
+    <app-message-error [control]="f.firstName"></app-message-error>
+  </p>
+
+  <p>
+    <label>Apellidos</label>
+    <input type="text" formControlName="lastName">
+    <app-message-error [control]="f.lastName"></app-message-error>
+  </p>
+
+  <p>
+    <label>Usuario</label>
+    <input type="text" formControlName="username">
+    <app-message-error [control]="f.username"></app-message-error>
+  </p>
+
+  <p>
+    <label>Password</label>
+    <input type="password" formControlName="password">
+  </p>
+
+  <p>
+    <label>confirmar password</label>
+    <input type="password" formControlName="confirmPassword">
+  </p>
+
+  <button>Registrarse</button>
+</form>
