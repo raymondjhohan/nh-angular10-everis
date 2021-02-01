@@ -10,6 +10,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BookListExampleComponent } from './components/book-list-example/book-list-example.component';
 import { BookSelectCountComponent } from './components/book-select-count/book-select-count.component';
 
+import { CustomNamePipie } from './components/book-example/book-name.pipe';
+import { BooklistasComponent } from './components/booklistas/booklistas.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { BookSelectCountComponent } from './components/book-select-count/book-se
     HomePageComponent,
     BookListExampleComponent,
     BookSelectCountComponent,
+    CustomNamePipie,
+    BooklistasComponent
   ],
   imports: [
     BrowserModule,
