@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { SuscribeService } from '../../services/suscribe.service';
 
 @Component({
   selector: 'app-suscribe-form',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuscribeFormComponent implements OnInit {
 
-  constructor() { }
+  suscribeForm: FormGroup;
+  constructor(
+    private fb: FormBuilder,
+    private suscribeService: SuscribeService
+  ) { }
 
   ngOnInit(): void {
+    this.initForm();
   }
 
+  initForm() {
+    this.suscribeForm = this.fb.group({
+      email: [null, [Validators.required, Validators.email]]
+    })
+  }
+
+  get email(): AbstractControl {
+    return this.suscribeForm.get('email')
+  }
+
+  toSuscribe(suscribeForm) {
+    if (suscribeForm.valid) {
+      this.suscribeService.save(suscribeForm.get('email').value);
+    }
+  }
 }
