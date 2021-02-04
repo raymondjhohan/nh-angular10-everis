@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { BookShortComponent } from './components/book-short/book-short.component';
 import { FormMessageErrorComponent } from './components/form-message-error/form-message-error.component';
-
+import { BookMockService } from './services/book/book-mock.service';
 
 
 @NgModule({
@@ -18,6 +18,9 @@ import { FormMessageErrorComponent } from './components/form-message-error/form-
   exports: [
     BookListComponent,
     FormMessageErrorComponent,
+  ],
+  providers: [
+    BookMockService,
   ]
 })
 export class SharedModule { }
