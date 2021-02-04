@@ -1,6 +1,8 @@
 <img [src]="book.image" width="100%" height="auto">
 <p class="book-title">
-  {{ book.name }}
+ <a [routerLink]="['/books', book.id]">
+   {{ book.name }}
+  </a>
 </p>
 <p class="book-publisher">
   {{ book.publisher }}
