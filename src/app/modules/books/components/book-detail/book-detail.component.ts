@@ -20,7 +20,9 @@ export class BookDetailComponent implements OnInit {
   }
 
   fetchBook() {
-    this.book = this.bookService.getBook(this.bookId);
+    this.bookService.getBook(this.bookId).subscribe(
+      book => this.book = book
+    )
   }
 
 }

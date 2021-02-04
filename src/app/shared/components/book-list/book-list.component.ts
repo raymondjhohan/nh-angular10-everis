@@ -23,7 +23,15 @@ export class BookListComponent implements OnInit {
   }
 
   fetchBooks(): void {
-    this.books = this.isFeatured ? this.bookService.getFeaturedBooks() : this.bookService.getBooks();
+    if (this.isFeatured) {
+      this.bookService.getFeaturedBooks().subscribe(
+        books => this.books = books
+      )
+    }else {
+      this.bookService.getBooks().subscribe(
+        books => this.books = books
+      )
+    }
   }
 
 }
