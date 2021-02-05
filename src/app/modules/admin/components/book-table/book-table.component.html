@@ -1,0 +1,40 @@
+<p-panel>
+  <p-header>
+    <button pButton class="p-button-success" icon="pi pi-plus" label="Agregar"></button>
+  </p-header>
+  <ng-container *ngIf="books.length <= 0 else bookTable">
+    <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+  </ng-container>
+</p-panel>
+
+<ng-template #bookTable>
+  <p-table [value]="books">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Id</th>
+            <th>cover</th>
+            <th>isbn</th>
+            <th>name</th>
+            <th>publisher</th>
+            <th>Acciones</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-book>
+        <tr>
+            <td>{{book.id}}</td>
+            <td>
+              <img [src]="book.image" [width]="80">
+            </td>
+            <td>{{book.isbn}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.publisher}}</td>
+            <td>
+              <button pButton type="button" icon="pi pi-pencil" iconPos="left" label="editar"></button>
+              <button pButton class="p-button-danger" type="button" icon="pi pi-times" iconPos="left" label="editar"></button>
+            </td>
+        </tr>
+    </ng-template>
+  </p-table>
+</ng-template>
+
+
