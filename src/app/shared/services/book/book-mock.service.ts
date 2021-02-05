@@ -2,13 +2,16 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Book } from '../../interfaces/book';
 import { booksMock } from '../../mocks/books.mock';
+import { BookService } from './book.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BookMockService {
+export class BookMockService extends BookService {
 
-  constructor() { }
+  constructor() { 
+    super();
+  }
 
   getBooks(): Observable<Book[]> {
     return new Observable(observer => {

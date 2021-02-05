@@ -6,7 +6,8 @@ import { BookListComponent } from './components/book-list/book-list.component';
 import { BookShortComponent } from './components/book-short/book-short.component';
 import { FormMessageErrorComponent } from './components/form-message-error/form-message-error.component';
 import { BookMockService } from './services/book/book-mock.service';
-
+import { BookApiService } from './services/book/book-api.service';
+import { BookService } from './services/book/book.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BookMockService } from './services/book/book-mock.service';
     FormMessageErrorComponent,
   ],
   providers: [
-    BookMockService,
+    // BookService
+    {provide: BookService, useClass: BookApiService}
   ]
 })
 export class SharedModule { }

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Book } from 'src/app/shared/interfaces/book';
-import { BookMockService } from 'src/app/shared/services/book/book-mock.service';
+import { BookService } from 'src/app/shared/services/book/book.service';
 
 @Component({
   selector: 'app-book-detail',
@@ -12,7 +12,7 @@ export class BookDetailComponent implements OnInit {
   @Input() bookId;
   book: Book;
   constructor(
-    private bookService: BookMockService
+    private bookService: BookService
   ) { }
 
   ngOnInit(): void {
