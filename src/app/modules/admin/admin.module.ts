@@ -9,6 +9,7 @@ import {ButtonModule} from 'primeng/button';
 import {PanelModule} from 'primeng/panel';
 import { BookTableComponent } from './components/book-table/book-table.component';
 
+
 @NgModule({
   declarations: [BookListPageComponent, BookCreatePageComponent, BookTableComponent],
   imports: [
@@ -17,6 +18,6 @@ import { BookTableComponent } from './components/book-table/book-table.component
     TableModule,
     ButtonModule,
     PanelModule,
-  ]
+  ],
 })
 export class AdminModule { }
