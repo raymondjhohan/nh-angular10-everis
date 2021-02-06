@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 import { StorageAuthService } from 'src/app/shared/services/storage-auth.service';
 import { LoginService } from '../../services/login.service';
 
@@ -11,7 +13,9 @@ import { LoginService } from '../../services/login.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  loginRedirect: string = environment.loginRedirect;
   constructor(
+    private router: Router, 
     private fb: FormBuilder,
     private loginService: LoginService,
     private storage: StorageAuthService,
@@ -37,7 +41,10 @@ export class LoginComponent implements OnInit {
       const username = this.loginForm.get('username').value;
       const password = this.loginForm.get('password').value;
       this.loginService.login({username, password}).subscribe(
-        session => this.storage.setToken(session.token)
+        session => {
+          this.storage.setToken(session.token);
+          this.router.navigate([this.loginRedirect]);
+        }
       )
     }
   }

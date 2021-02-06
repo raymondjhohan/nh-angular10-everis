@@ -6,11 +6,14 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { StorageAuthService } from 'src/app/shared/services/storage-auth.service';
 
 @Injectable()
 export class AuthorizatedInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor(
+    private storage: StorageAuthService
+  ) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const newRequest = request.clone({
@@ -23,6 +26,7 @@ export class AuthorizatedInterceptor implements HttpInterceptor {
   }
 
   getToken(): string {
-    return 'JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjEyNTc2NTczLCJlbWFpbCI6ImpjcmFtaXJlenRlbGxvQGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNjEyNTcyOTczfQ.fwXLVK-3r_4yPcOAKeDkpzAvi1CqeVJ2Szj1ZATmD7k';
+    const token = this.storage.getToken();
+    return `JWT ${token}`;
   }
 }
