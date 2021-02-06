@@ -15,6 +15,7 @@ import { HeaderAdminComponent } from './components/header-admin/header-admin.com
 import { FooterAdminComponent } from './components/footer-admin/footer-admin.component';
 import { SharedModule as PrimeSharedModule } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
+import { LayoutAuthComponent } from './pages/layout-auth/layout-auth.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MenubarModule } from 'primeng/menubar';
     LayoutAdminComponent,
     SuscribeFormComponent,
     HeaderAdminComponent,
-    FooterAdminComponent
+    FooterAdminComponent,
+    LayoutAuthComponent
   ],
   imports: [
     CommonModule,
