@@ -35,6 +35,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
+        // canLoad: [],
         loadChildren: () => import('../auth/auth.module').then(m => m.AuthModule)
       }
     ]

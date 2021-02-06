@@ -1,6 +1,6 @@
 <p-panel>
   <p-header>
-    <button pButton class="p-button-success" icon="pi pi-plus" label="Agregar"></button>
+    <button pButton class="p-button-success" icon="pi pi-plus" label="Agregar" [routerLink]="'add'"></button>
   </p-header>
   <ng-container *ngIf="books.length <= 0 else bookTable">
     <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
