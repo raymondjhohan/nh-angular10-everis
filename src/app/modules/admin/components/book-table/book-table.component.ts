@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BookService } from 'src/app/shared/services/book/book.service';
 import { Book } from 'src/app/shared/interfaces/book';
+import { BookAuthApiService } from '../../services/book-auth-api.service';
 
 @Component({
   selector: 'app-book-table',
@@ -11,7 +11,7 @@ export class BookTableComponent implements OnInit {
 
   books: Book[]; 
   constructor(
-    private bookService: BookService
+    private bookService: BookAuthApiService
   ) { }
 
   ngOnInit(): void {
